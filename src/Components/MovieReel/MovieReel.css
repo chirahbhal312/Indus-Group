@@ -2,6 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* margin-top: 60px;
+    font-size: 48px;
+    font-weight: bold; */
+  }
+
+  #op {
+    margin-top: 60px;
+    font-size: 48px;
+    font-weight: bold;
   }
   
   .movie-reel {

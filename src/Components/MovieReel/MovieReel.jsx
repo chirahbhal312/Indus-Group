@@ -75,6 +75,9 @@ const slides = [
   
     return (
       <div className="movie-reels">
+        <p id='op'>
+          OUR PARTNERS
+        </p>
         <div className="movie-reel">
           <div className="movie-reel-inner" ref={reelInnerRef1}></div>
         </div>

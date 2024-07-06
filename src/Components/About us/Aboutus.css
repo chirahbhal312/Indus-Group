@@ -1,0 +1,36 @@
+.about-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #D9EBFF;
+    margin-top: 60px;
+  }
+  
+  .text-container {
+    flex: 1;
+    padding-right: 40px;
+    padding-left: 60px;
+    color: black;
+  }
+
+  .text-container h1 {
+    font-size: 48px;
+  }
+  
+  .image-container {
+    width:550px;
+    height: auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .text-container p {
+    margin-right: 100px;
+  }
+  
+  
+  
+  
