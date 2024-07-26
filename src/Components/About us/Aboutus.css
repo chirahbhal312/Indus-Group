@@ -1,36 +1,60 @@
 .about-container {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    background-color: #D9EBFF;
-    margin-top: 60px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #D9EBFF;
+  margin-top: 60px;
+  flex-direction: row; /* Default layout for large screens */
+}
+
+.text-container {
+  flex: 1;
+  padding-right: 40px;
+  padding-left: 60px;
+  color: black;
+  margin-top: -60px;
+}
+
+.text-container h1 {
+  font-size: 48px;
+}
+
+.image-container {
+  width: 550px;
+  height: auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.text-container p {
+  margin-right: 100px;
+}
+
+/* Responsive Design for Small Screens */
+@media only screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack image on top of text */
+    align-items: center; /* Center align content */
+    padding: 20px; /* Adjust padding */
   }
   
   .text-container {
-    flex: 1;
-    padding-right: 40px;
-    padding-left: 60px;
-    color: black;
-  }
-
-  .text-container h1 {
-    font-size: 48px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 0; /* Reset margin-top */
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Add margin-bottom to separate text from image */
   }
   
   .image-container {
-    width:550px;
-    height: auto;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
+    max-width: 60%; /* Make image container full width */
+    margin-top: 20px; /* Adjust margin-top */
   }
-
+  
   .text-container p {
-    margin-right: 100px;
+    margin-right: 0; /* Reset margin-right */
   }
-  
-  
-  
-  
+}

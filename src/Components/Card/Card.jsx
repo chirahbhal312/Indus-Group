@@ -1,15 +1,14 @@
 import React from "react";
 import "./Card.css";
-import photo from '../Blogs/images/finance.jpg'
 import {Link} from 'react-router-dom';
 
-const Card = () => {
+const Card = ({heading, description, photo, link}) => {
   return (
     <div className="card-container">
       <img src={photo} alt="" />
-      <h2>Indus Group</h2>
-      <p>Indus Group is a leading financial services company in India. It is a part Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi fugit iure porro officiis rerum illo.</p>
-      <Link to='/Indusenterprises' className='routing' >Learn More</Link>
+      <h2>{heading}</h2>
+      <p>{description}</p>
+      <Link to={link} className="routing">Learn More</Link>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import './blogs.css';
-import mainImage from './images/logistics.jpg'; 
 import image1 from './images/business.jpg'; 
 import image2 from './images/finance.jpg'; 
 import image3 from './images/analytics.jpg'; 
@@ -10,8 +9,7 @@ const IndusB2BSolutions = () => {
     <div className="container">
         <div className="left-blog">
           <div className="main-image">
-          <h1>Indus B2B Solutions</h1>
-          <img src={mainImage} alt="Main" />
+          <img src={image1} alt="Main" />
           </div>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.

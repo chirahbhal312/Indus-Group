@@ -5,6 +5,7 @@ import youtubeIcon from './youtube.jpg';
 import instagramIcon from './instagram.jpg';
 import twitterIcon from './twitter.jpg';
 import linkedinIcon from './linkedin.png';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -24,9 +25,9 @@ const Footer = () => {
             <div className="footer-section">
                 <h3>PRODUCT</h3>
                 <ul>
-                    <li><a href="#">Indus B2B Solutions</a></li>
-                    <li><a href="#">Myskills Academy</a></li>
-                    <li><a href="#">Indus Enterprises</a></li>
+                    <li><Link to="/Indusb2b">Indus B2B Solutions</Link></li>
+                    <li><Link to="/MySkillsAcademy">Myskills Academy</Link></li>
+                    <li><Link to="/Indusenterprises">Indus Enterprises</Link></li>
                 </ul>
             </div>
             <div className="footer-section">

@@ -1,49 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './navbar.css';
 import logo from './logo.png';
-import { FaSearch, FaChevronDown } from 'react-icons/fa';
+import { FaSearch, FaChevronDown, FaBars } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <img src={logo} alt="Logo" height={60} width={100} />
+      <div className="navbar-container">
+        <div className="navbar-logo">
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
+        </div>
+        <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+          <FaBars />
+        </div>
       </div>
-      <ul className="navbar-links">
-        <li><a href="/">Home</a></li>
+      <ul className={`navbar-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <li><Link to="/">Home</Link></li>
         <li className="dropdown">
-          <a href="/company">Company <FaChevronDown className="dropdown-icon" /></a>
+          <Link to="/company">Company <FaChevronDown className="dropdown-icon" /></Link>
           <ul className="dropdown-menu">
-            <li><a href="/company/about-us">About Us</a></li>
-            <li><a href="/company/leadership">Leadership</a></li>
-            <li><a href="/company/equal-opportunity">Equal Opportunity</a></li>
+            <li><Link to="/company/about-us">About Us</Link></li>
+            <li><Link to="/company/leadership">Leadership</Link></li>
+            <li><Link to="/company/equal-opportunity">Equal Opportunity</Link></li>
           </ul>
         </li>
         <li className="dropdown">
-          <a href="/businesses">Businesses <FaChevronDown className="dropdown-icon" /></a>
+          <Link to="#">Businesses <FaChevronDown className="dropdown-icon" /></Link>
           <ul className="dropdown-menu">
-            <li><a href="/businesses/b2b(Intergrated logistics)">b2b(Intergrated logistics)</a></li>
-            <li><a href="/businesses/Myskills(upskilling solutions)">Myskills(upskilling solutions)</a></li>
-            <li><a href="/businesses/Enterprise(enterprise solutions)">Enterprise(enterprise solutions)</a></li>
+            <li><Link to="/Indusb2b">B2B (Integrated Logistics)</Link></li>
+            <li><Link to="/Indusenterprises">Indus Enterprises</Link></li>
+            <li><Link to="/MySkillsAcademy">My Skills Academy</Link></li>
+          </ul>
+        </li>
+        
+        {/* <li className="dropdown">
+          <Link to="#">Businesses <FaChevronDown className="dropdown-icon" /></Link>
+          <ul className="dropdown-menu">
+            <li><Link to='/Indusb2b' className='routing'>B2B (Integrated logistics)</Link></li>
+            <li><Link to='/Indusenterprises' className='routing'>Indus Enterprises</Link></li>
+            <li><Link to='/MySkillsAcademy' className='routing'>My Skills Academy</Link></li>
+          </ul>
+        </li> */}
+        <li className="dropdown">
+          <Link to="/tools">Tools <FaChevronDown className="dropdown-icon" /></Link>
+          <ul className="dropdown-menu">
+            <li><Link to="/tools/Rate-discovery">Rate Discovery</Link></li>
+            <li><Link to="/tools/Tracking">Tracking</Link></li>
+            <li><Link to="/tools/HS-code">HS Code</Link></li>
+            <li><Link to="/tools/Finder">Finder</Link></li>
+            <li><Link to="/tools/Currency-converter">Currency Converter</Link></li>
           </ul>
         </li>
         <li className="dropdown">
-          <a href="/tools">Tools <FaChevronDown className="dropdown-icon" /></a>
+          <Link to="/knowledge-centre">Knowledge Centre <FaChevronDown className="dropdown-icon" /></Link>
           <ul className="dropdown-menu">
-            <li><a href="/tools/Rate discovery">Rate discovery</a></li>
-            <li><a href="/tools/Tracking">Tracking</a></li>
-            <li><a href="/tools/HS code">HS code</a></li>
-            <li><a href="/tools/Finder">Finder</a></li>
-            <li><a href="/tools/Currency converter">Currency converter</a></li>
-          </ul>
-        </li>
-        <li className="dropdown">
-          <a href="/knowledge-centre">Knowledge Centre <FaChevronDown className="dropdown-icon" /></a>
-          <ul className="dropdown-menu">
-            <li><a href="/knowledge-centre/Blogs">Blogs</a></li>
-            <li><a href="/knowledge-centre/News and Updates">News and Updates</a></li>
-            <li><a href="/knowledge-centre/Events">Events</a></li>
-            <li><a href="/knowledge-centre/Notification Centre">Notification Centre</a></li>
+            <li><Link to="/knowledge-centre/Blogs">Blogs</Link></li>
+            <li><Link to="/knowledge-centre/News-and-Updates">News and Updates</Link></li>
+            <li><Link to="/knowledge-centre/Events">Events</Link></li>
+            <li><Link to="/knowledge-centre/Notification-Centre">Notification Centre</Link></li>
           </ul>
         </li>
       </ul>

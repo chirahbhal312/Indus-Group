@@ -1,16 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import './MovieReel.css'; // Custom styles
 
-import image1 from '../Carousel/image1.jpg';
-import image2 from '../Carousel/image1.jpg';
-import image3 from '../Carousel/image1.jpg';
-import image4 from '../Carousel/image1.jpg';
+import image1 from './JCTrans.png';
+import image2 from './SafeOBuddy.png';
+import image3 from './auzair.jpeg';
+import image4 from './iffco-tokio.png';
+import image5 from './ifreightbox.jpeg';
 
 const slides = [
     { image: image1, alt: 'Image 1' },
     { image: image2, alt: 'Image 2' },
     { image: image3, alt: 'Image 3' },
     { image: image4, alt: 'Image 4' },
+    { image: image5, alt: 'Image 5' },
   ];
   const counters = [
     { value: 1000, label: 'customers' },
@@ -19,7 +21,7 @@ const slides = [
     { value: 1800, label: 'employees' }
   ];
   
-  const MovieReel = () => {
+  const MovieReel = ({}) => {
     const reelInnerRef1 = useRef(null);
     const reelInnerRef2 = useRef(null);
     const counterRefs = useRef([]);

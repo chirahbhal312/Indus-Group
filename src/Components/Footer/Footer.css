@@ -5,19 +5,18 @@ body {
 
 .footer {
     display: flex;
-    /* justify-content: space-around; */
+    flex-wrap: wrap;
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100vw;
-    height: 300px;
     margin-top: 80px;
 }
 
 .footer-section {
     flex: 1;
-    padding: 0 60px;
-    
+    padding: 20px;
+    min-width: 250px; /* Ensure sections stack vertically on small screens */
 }
 
 .footer-section h2,
@@ -28,13 +27,11 @@ body {
 .footer-section p,
 .footer-section ul {
     color: #aaa;
-    
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
-    
 }
 
 .footer-section ul li {
@@ -44,7 +41,6 @@ body {
 .footer-section ul li a {
     color: #aaa;
     text-decoration: none;
-    
 }
 
 .footer-section ul li a:hover {
@@ -55,10 +51,8 @@ body {
     display: flex;
     list-style: none;
     padding: 0;
-  gap: 20px; /* Adjust the value as needed for spacing */
-    }
-    
-
+    gap: 20px; /* Adjust the value as needed for spacing */
+}
 
 .social-media li {
     margin-right: 10px;
@@ -76,4 +70,29 @@ body {
 
 .footer-section p a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        padding: 20px 10px;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .footer-section ul {
+        padding-left: 0;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+    }
 }
